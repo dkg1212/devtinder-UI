@@ -1,22 +1,24 @@
-import React from 'react';
+import { useSelector } from "react-redux";
 
-function Navbar() {
+const Navbar = () => {
+  const user = useSelector((state) => state.user);
+
   return (
     <div className="navbar bg-gray-500 shadow-lg"> {/* Changed to bg-base-300 for better theme compatibility */}
       <div className="flex-1">
         <a href="/" className="btn btn-ghost text-xl">DevTinder</a>
       </div>
-
+    {user &&(
       <div className="flex-none gap-2"> {/* Changed to flex-none for better alignment */}
         <div className="form-control">
-          <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+          Welcome,{ " "+user.firstName + " " + user.lastName} {/* Displaying user's first and last name */}
         </div>
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <img
                 alt="User profile picture"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                src={user.photoUrl}
               />
             </div>
           </div>
@@ -36,6 +38,7 @@ function Navbar() {
           </ul>
         </div>
       </div>
+    )}
     </div>
   );
 }

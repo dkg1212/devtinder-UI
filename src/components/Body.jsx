@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 function Body() {
   return (
-    <div >
+    <div className="bg-gray-400 min-h-screen">
         <Navbar />
         <Outlet/>
         <Footer />
