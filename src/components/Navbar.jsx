@@ -9,15 +9,15 @@ const Navbar = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleLogout = async () => {
-    try {
-      await axios.post(BASE_URL + "/logout", { withCredentials: true });
-      dispatch(removedUser());
-      navigate("/login");
-    } catch (err) {
-      console.error("Logout failed:", err);
-    }
-  };
+const handleLogout = async () => {
+  try {
+    await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
+    dispatch(removedUser());
+    navigate("/login");
+  } catch (err) {
+    console.error("Logout failed:", err);
+  }
+};
   return (
     <div className="navbar bg-gray-500 shadow-lg"> {/* Changed to bg-base-300 for better theme compatibility */}
       <div className="flex-1">
