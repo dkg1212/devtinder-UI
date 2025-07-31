@@ -6,6 +6,7 @@ import { addFeed } from "../utils/feedSlice";
 import { BASE_URL } from "../utils/constants";
 import { useEffect } from "react";
 import UserCard from "./UserCard";
+import { PiggyBank } from "lucide-react";
 
 
 const Feed = () => {
@@ -44,3 +45,4 @@ const Feed = () => {
   );
 };
 export default Feed;
+
